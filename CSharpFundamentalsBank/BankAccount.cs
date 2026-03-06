@@ -44,4 +44,17 @@ public class BankAccount
             return false;
         }
     }
+
+    public void PrintDepositReport()
+    {
+        Console.WriteLine("\n--- Deposit Report ---");
+        var deposits = _transactionHistory.Where(x => x > 0);
+        int counter = 1;
+        foreach (decimal deposit in deposits)
+        {
+            Console.WriteLine($"{counter}. +{deposit}");
+            counter++;
+        }
+        Console.WriteLine($"Total deposited amount: Rp {deposits.Sum()}");
+    }
 }

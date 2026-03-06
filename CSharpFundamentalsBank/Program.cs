@@ -12,7 +12,8 @@ while (isRunning)
     Console.WriteLine($"Current Balance: Rp {myAccount.Balance}");
     Console.WriteLine("1. View Transaction History");
     Console.WriteLine("2. Withdraw Money");
-    Console.WriteLine("3. Exit");
+    Console.WriteLine("3. View Deposit Report");
+    Console.WriteLine("4. Exit");
     Console.Write("Choose an option: ");
 
     string? userChoice = Console.ReadLine();
@@ -45,7 +46,15 @@ while (isRunning)
             break;
 
         case "3":
+            myAccount.PrintDepositReport();
+            break;
+
+        case "4":
             isRunning = false;
+            break;
+
+        default:
+            Console.WriteLine("Invalid choice!");
             break;
     }
 }
